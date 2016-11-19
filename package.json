@@ -4,6 +4,7 @@
   "description": "Contact manager for recruiters, made with Angular",
   "main": "index.js",
   "scripts": {
+    "dummy-server": "json-server --watch var/db.json",
     "eslint": "eslint src/**/*.js; exit 0",
     "serve": "webpack-dev-server --history-api-fallback --contet-base ./ --inline --progress",
     "test": "npm run eslint && karma start ./test/karma.conf.js; exit 0",
@@ -51,5 +52,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "json-server": "^0.9.0"
   }
 }
