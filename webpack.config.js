@@ -92,10 +92,17 @@ module.exports = function makeWebpackConfig () {
 		config.module.preLoaders.push({
 			test: /\.js$/,
 			exclude: [
+				/node_modules/
+			],
+			loader: 'babel'
+		});
+		config.module.preLoaders.push({
+			test: /src\/(.+)\.js$/,
+			exclude: [
 				/node_modules/,
 				/\.spec\.js$/
 			],
-			loader: 'isparta-instrumenter'
+			loader: 'isparta'
 		})
 	}
 
