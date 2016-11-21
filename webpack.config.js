@@ -130,7 +130,11 @@ module.exports = function makeWebpackConfig () {
 			new HtmlWebpackPlugin({
 				template	: './src/index.pug',
 				inject		: 'body'
-			})
+			}),
+
+      new webpack.ProvidePlugin({
+        _: 'lodash'
+      })
 
 		)
 	}

@@ -1,0 +1,28 @@
+div(layout='row', layout-align='center start')
+    div(flex="", hide-xs)
+    md-card(flex-xs="100", flex-sm="70", flex-md="60", flex-lg="40", flex-xl="30")
+        div.image-container(style="background-image: url({{ contact.image }})", ng-class="{'has-image': !!contact.image}")
+            input.hide(id="image-input", type='file', ng-model='contact.image', base-sixty-four-input='', parser='imageParser')
+            label.clicable(for="image-input")
+                md-icon edit
+                div.backdrop
+        md-card-content
+            md-input-container
+                label Name
+                input(ng-model='contact.name')
+            md-input-container.md-block
+                label Description
+                textarea(ng-model='contact.description', rows='1', md-select-on-focus='')
+            md-input-container
+                label Emails
+                md-chips(ng-model='contact.emails', md-removable='true')
+            md-input-container
+                label Phones
+                md-chips(ng-model='contact.phones', md-removable='true')
+
+
+
+        md-card-actions(layout='row', layout-align='end center')
+            md-button(ng-click="save(contact)") Done
+            md-button(ng-click="cancel(contact)") Cancel
+    div(flex="", hide-xs)

@@ -1,0 +1,25 @@
+md-sidenav.md-sidenav-right(md-component-id='sidebar', md-is-locked-open="", md-whiteframe='4')
+    md-toolbar.md-theme-indigo
+        h1.md-toolbar-tools More
+            span(flex='')
+            md-button.md-icon-button.right(aria-label='close', ng-click="ui.toggleSidebar()")
+                md-icon close
+    md-content(layout-margin='')
+        p
+            | This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+div(layout="column", layout-align="center start", tabindex="-1", role="main", flex)
+    md-toolbar.md-hue-2
+        .md-toolbar-tools
+            md-button.md-icon-button(ng-if="state.params.backButton", aria-label='Open Sidebar', ng-click="state.go('^')")
+                md-icon arrow_back
+
+            h2 Contacts
+            span(flex='')
+            //md-button.md-icon-button(aria-label='Favorite')
+                md-icon favorite
+            //md-button.md-icon-button(aria-label='More', ng-click="ui.toggleSidebar()")
+                md-icon more_vert
+
+
+    md-content(flex='', layout-padding='', style="width:100%")
+        ui-view
