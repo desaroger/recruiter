@@ -1,17 +1,19 @@
 html
-	head
-		meta(charset='utf-8')
-		title Recruiter
-		meta(name='viewport', content='width=device-width initial-scale=1 maximum-scale=1 user-scalable=no')
-		base(href='/')
-		style.
-			[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-				display: none !important;
-			}
-	body()
-		ui-view
+    head
+        meta(charset='utf-8')
+        title Recruiter
+        meta(name='viewport', content='width=device-width initial-scale=1 maximum-scale=1 user-scalable=no')
+        base(href='/')
+        link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        style.
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+    body(ng-app="app", layout="row", ng-cloak)
+        ui-view
 
-		// Blank angular template
-		script(type='text/ng-template', id='blankTemplate.html').
-			<!-- nothing -->
+        // Blank angular template
+        script(type='text/ng-template', id='blankTemplate.html').
+            <!-- nothing -->
 
