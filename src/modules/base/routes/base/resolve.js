@@ -5,9 +5,10 @@
 export default {
 
   // Populate rootScope with some critical utilities
-  'rootScopeResolver': ($rootScope, uiService) => {
+  'rootScopeResolver': ($rootScope, uiService, $state) => {
     $rootScope.cl = (x) => console.log(x);
     $rootScope.ui = uiService;
+    $rootScope.state = $state;
   }
 
 };

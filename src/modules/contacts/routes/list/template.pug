@@ -1,0 +1,15 @@
+ui-view
+    //md-tabs(md-dynamic-height='', md-border-bottom='', hide-xs)
+        md-tab(label='one')
+        md-tab(label='two')
+        md-tab(label='three')
+    div(layout='row', layout-align='center start')
+        div(flex="", hide-xs)
+        div(flex="")
+            md-list(layout='column', layout-align='start start')
+                md-list-item.md-2-line(ng-repeat="contact in contacts", ui-sref="base.contacts.detail(contact)")
+                    img.md-avatar(ng-src='{{ contact.image }}', alt='lorem')
+                    .md-list-item-text
+                        h3 {{ contact.name }}
+                        p {{ contact.emails[0] }}
+        div(flex="", hide-xs)
