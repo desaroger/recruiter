@@ -17,8 +17,45 @@ You need to build an Angular app with:
 I am going to make an MVP with the minimum requirements: A basic CRUD app of contacts. Name, phone, etc.
 And later I will add extra functionality, like search, groups, etc.
 
-I'm going to use Angular 1.6. I will use Webpack to compile everything, pug and sass. ES6 too with babel.
+I'm going to use Angular 1.6. I will use Webpack to compile everything, jasmine, karma, coverage, eslint, pug, sass... ES6 too with babel.
 I will try to add some basic tests. I am not happy unless everything is tested, but on this frontend application, as testing directives in Angular is such a nightmare, I will be happy if I can test some basic functionality.
+
+# Whys
+
+### Webpack
+
+This is a little project and webpack actually isn't needed, but you never known how big a project can grow. I never scaled a project too big, always scaled to a good approach or too small, so when a project has angular, ES6, tests, pug (...) I know webpack will save a lot of time.
+
+### ES6
+
+This isn't needed. I am in love with new ES6/7 features, but none is critical to this project. But since you are using webpack,  add babel is quite straightforward, and it hasn't too much cons. You must go carefully configuring karma and coverage, but is not extremely difficult.
+
+### Eslint
+
+I don't care if you prefer spaces or tabs, or curly brace up or down, but you need to be consistent along your application. I chose Eslint with the Google configuration. I chose Google's for not a good, elaborate reason. I usually use the most common for each app. So if I am using angular, Google maybe is the logical choice.
+
+### Jasmine
+
+In my little experience with testing, Mocha is my choice if I am developing with NodeJS and ES6, as in the past I had issues with coverage and Jasmine with ES6. And to not use Mocha always and as most of examples of testing Angular are made with Jasmine, Jasmine will be my choice this time. As before, not a big reflexion picking up Jasmine, Mocha would have worked just as well in this case.
+
+### Pug
+
+I have tried Mustache, handlebars, underscore, twig... But none is (in my opinion, of course) as clean and fast (writing, not speaking of performance) as Pug. I am in love.
+
+### Sass
+
+I have doubts with this. I am going to use a css framework, and I am not going to make full custom components. I pretend to only make some little changes, so using SASS maybe isn't needed and I was thinking about it for a while. I finally installed it, as it has no cons (it doesn't affect the performance of the app or anything) and will made the styles more readable.
+
+### Angular Material
+
+Sincerely, I am bored of seeing all webpages the same. I am always thinking what will be the next style. Bootstrap is almost everywhere. I like Material and to me is not bad to do a webpage nowadays using Material styles. But lately the sites that use Material are growing and I am starting of be saturated.
+
+So... why I used material? For two reasons mainly: This is a web app, it can be a prototype of a future mobile app and using the same styles as the global Android style is, maybe, a good choice. The second reason is that Angular Material is the most straightforward, angular native framework, so for a little project like this it will speed things up.
+
+### Json-server
+
+There is a lot of options in order to make a dummy CRUD server. My first thought was make a Loopback API REST. With the loopback's console you can make a full featured API REST in minutes. But too much for a dummy server. Later I thought to use the $httpBackend service of angular, which allow mock http calls and is used mainly for tests purposes, but I thought it will be awesome to have a dummy server without anything, no console, no running a server, only the browser. But I was unable to find out a library which uses the httpBackend to make a CRUD, and I don't want to lose time building it. Json-server allows, with only a json, make an REST API. And also I wanted to be able to do a full-text search, and json-server allows this and a lot more things, so it's perfect.
+
 
 # Times
 

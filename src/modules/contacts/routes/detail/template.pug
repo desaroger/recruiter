@@ -1,0 +1,31 @@
+ui-view
+    div(layout='row', layout-align='center start')
+        div(flex="", hide-xs)
+        md-card(flex-xs="100", flex-sm="70", flex-md="60", flex-lg="40", flex-xl="30")
+            div.image-container(style="height: 200px; background-image: url({{ contact.image }}); background-size: cover; background-position: center")
+            md-card-title
+                md-card-title-text
+                    span.md-headline {{ contact.name }}
+            md-card-content
+                md-list(flex)
+                    md-list-item
+                        p {{ contact.description }}
+                    md-subheader.md-no-sticky Emails
+                    md-list-item.secondary-button-padding(ng-repeat='email in contact.emails', ng-ref="google.com")
+                        p {{ email }}
+                        md-button.md-secondary(aria-label='email')
+                            a(ng-href='mailto:{{ email }}')
+                                md-icon email
+                    md-divider
+                    md-subheader.md-no-sticky Phones
+                    md-list-item.secondary-button-padding(ng-repeat='phone in contact.phones')
+                        p {{ phone }}
+                        md-button.md-secondary(aria-label='call')
+                            a(ng-href='tel:{{ phone }}')
+                                md-icon call
+
+
+            md-card-actions(layout='row', layout-align='end center')
+                md-button(ng-click="showConfirmDelete()") Delete
+                md-button(ui-sref=".edit") Edit
+        div(flex="", hide-xs)
