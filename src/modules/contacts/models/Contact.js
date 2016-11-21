@@ -3,5 +3,11 @@
  */
 
 export default function ContactsModelsContact(Restangular) {
-  return Restangular.service('contacts');
+  let Contact = Restangular.service('contacts');
+
+  Contact.build = function build (data) {
+    return Restangular.restangularizeElement(null, data, 'contacts');
+  };
+
+  return Contact;
 };

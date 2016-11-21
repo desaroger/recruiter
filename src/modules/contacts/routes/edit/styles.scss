@@ -1,9 +1,13 @@
 
 .image-container {
 
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+
   position: relative;
 
-  &:not(:hover) label {
+  &.has-image:not(:hover) label {
     display: none;
   }
 

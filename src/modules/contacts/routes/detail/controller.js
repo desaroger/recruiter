@@ -4,6 +4,9 @@
 
 export default function ContactsRoutesList($scope, $stateParams, Contact) {
   $scope.loadContact = function loadContact(id) {
+    if (id == 'new') {
+      return $scope.contact = Contact.build({emails: [], phones: []});
+    }
     return Contact.one(id).get().then((c) => $scope.contact = c);
   };
 

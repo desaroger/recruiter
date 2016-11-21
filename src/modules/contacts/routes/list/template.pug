@@ -8,8 +8,10 @@ ui-view
         div(flex="")
             md-list(layout='column', layout-align='start start')
                 md-list-item.md-2-line(ng-repeat="contact in contacts", ui-sref="base.contacts.detail(contact)")
-                    img.md-avatar(ng-src='{{ contact.image }}', alt='lorem')
+                    img.md-avatar(ng-src='{{ contact.thumbnail || contact.image || "https://dummyimage.com/100x100/ffffff/000000.png&text=+" }}', alt='lorem')
                     .md-list-item-text
                         h3 {{ contact.name }}
                         p {{ contact.emails[0] }}
         div(flex="", hide-xs)
+    md-button.md-fab.md-fab-bottom-right.md-primary(ui-sref="base.contacts.detail.edit({id: 'new'})", aria-label='Add new contact')
+        md-icon person_add
