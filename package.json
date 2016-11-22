@@ -1,11 +1,12 @@
 {
   "name": "recruiter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Contact manager for recruiters, made with Angular",
   "main": "index.js",
   "scripts": {
-    "dummy-server": "json-server --watch var/db.json",
+    "api": "json-server --watch var/db.json",
     "eslint": "eslint src/**/*.js; exit 0",
+    "reset-db": "node ./scripts/resetDb",
     "serve": "webpack-dev-server --history-api-fallback --contet-base ./ --inline --progress",
     "test": "npm run eslint && karma start ./test/karma.conf.js; exit 0",
     "test-watch": "karma start --auto-watch --no-single-run ./test/karma.conf.js",
@@ -60,6 +61,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "fs-extra": "^1.0.0",
     "json-server": "^0.9.0"
   }
 }
