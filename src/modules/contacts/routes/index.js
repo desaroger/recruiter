@@ -6,7 +6,9 @@ import list from './list';
 import detail from './detail';
 import edit from './edit';
 
-export default ($stateProvider) => {
+export default function ContactsRoutes($stateProvider) {
+  'ngInject';
+
   $stateProvider
     .state('base.contacts', {                 // List
       url: 'contacts',

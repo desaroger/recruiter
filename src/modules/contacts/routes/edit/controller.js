@@ -3,7 +3,9 @@
  */
 import _ from 'lodash';
 
-export default function ContactsRoutesList($scope, $state, $q, Contact, contactsService) {
+export default function ContactsRoutesEdit($scope, $state, $q, Contact, contactsService) {
+  'ngInject';
+
   /**
    * Function to save the current contact. Can be a new contact.
    *

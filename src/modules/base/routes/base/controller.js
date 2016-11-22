@@ -3,6 +3,8 @@
  */
 
 export default function BaseRoutesBase($rootScope, $state, uiService, contactsService) {
+  'ngInject';
+
   // General purpose services on RootScope
   $rootScope.cl = (x) => console.log(x);
   $rootScope.ui = uiService;

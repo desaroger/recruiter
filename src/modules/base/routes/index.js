@@ -5,6 +5,8 @@
 import base from './base';
 
 export default function BaseRoutes($stateProvider, $urlRouterProvider) {
+  'ngInject';
+
   // Default location
   $urlRouterProvider.otherwise('/');
 
