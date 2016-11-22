@@ -3,10 +3,23 @@ ui-view
         md-tab(label='one')
         md-tab(label='two')
         md-tab(label='three')
+
     div(layout='row', layout-align='center start')
         div(flex="", hide-xs)
         div(flex="")
-            md-list(layout='column', layout-align='start start')
+            md-card(flex-gt-sm='90', flex-gt-md='80')
+                md-card-content
+                    md-list
+                        md-list-item.md-3-line(ng-repeat='contact in contacts.list', ui-sref="base.contacts.detail(contact)")
+                            img.md-avatar(ng-src='{{ contact.images[0].thumbnail }}', alt='{{item.who}}')
+                            .md-list-item-text
+                                h3 {{ contact.name }}
+                                h4 {{ contact.email}}
+                                p {{ contact.description }}
+                            md-divider(md-inset='', ng-if='!$last')
+
+
+            //md-list(layout='column', layout-align='start start')
                 md-list-item.md-2-line(ng-repeat="contact in contacts", ui-sref="base.contacts.detail(contact)")
                     img.md-avatar(ng-src='{{ contact.thumbnail || contact.image || "https://dummyimage.com/100x100/ffffff/000000.png&text=+" }}', alt='lorem')
                     .md-list-item-text

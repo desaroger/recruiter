@@ -2,3 +2,10 @@
 .clicable {
   cursor: pointer;
 }
+
+.pointer-events{
+  pointer-events: all;
+}
+.no-pointer-events {
+  pointer-events: none;
+}

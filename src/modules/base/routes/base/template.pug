@@ -1,4 +1,4 @@
-md-sidenav.md-sidenav-right(md-component-id='sidebar', md-is-locked-open="", md-whiteframe='4')
+//md-sidenav.md-sidenav-right(md-component-id='sidebar', md-is-locked-open="", md-whiteframe='4')
     md-toolbar.md-theme-indigo
         h1.md-toolbar-tools More
             span(flex='')
@@ -8,18 +8,25 @@ md-sidenav.md-sidenav-right(md-component-id='sidebar', md-is-locked-open="", md-
         p
             | This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
 div(layout="column", layout-align="center start", tabindex="-1", role="main", flex)
-    md-toolbar.md-hue-2
+    md-toolbar.md-hue-2(ng-if="!contacts.search")
         .md-toolbar-tools
             md-button.md-icon-button(ng-if="state.params.backButton", aria-label='Open Sidebar', ng-click="state.go('^')")
                 md-icon arrow_back
 
             h2 Contacts
             span(flex='')
-            //md-button.md-icon-button(aria-label='Favorite')
-                md-icon favorite
-            //md-button.md-icon-button(aria-label='More', ng-click="ui.toggleSidebar()")
-                md-icon more_vert
+            md-button.md-icon-button(ng-if="state.current.name == 'base.contacts'", ng-click="contacts.toggleSearch()", aria-label='search')
+                md-icon search
+    md-toolbar(id="search-toolbar", ng-if="contacts.search", md-theme="grey")
+        .md-toolbar-tools
+            md-button.md-icon-button(ng-click='contacts.toggleSearch()', aria-label='Back')
+                md-icon arrow_back
+            md-input-container(flex='')
+                label &nbsp;
+                input(ng-model='contacts.searchTerm', ng-change="contacts.update()", placeholder='enter search', autofocus)
+            md-button.md-icon-button(aria-label='Search', ng-click="contacts.update()", ng-disabled="!contacts.searchTerm")
+                md-icon search
 
 
-    md-content(flex='', layout-padding='', style="width:100%")
+    md-content(id="main-content", flex='', layout-padding='', style="width:100%")
         ui-view

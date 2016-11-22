@@ -7,4 +7,5 @@ export default function BaseRoutesBase($state) {
   if ($state.current.name == 'base') {
     $state.go('base.contacts');
   }
+  
 };

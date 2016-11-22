@@ -2,23 +2,22 @@
  * Created by desaroger on 20/11/16.
  */
 
-export default function ContactsRoutesList($scope, $stateParams, $state, Contact, $mdDialog) {
+export default function ContactsRoutesList($scope, $stateParams, $state, Contact, $mdDialog, contactsService) {
   $scope.loadContact = function loadContact(id) {
     if (id == 'new') {
       return $scope.contact = Contact.build({emails: [], phones: []});
     }
-    return Contact.one(id).get().then((c) => $scope.contact = c);
+    return Contact.one(id).get({_embed: 'images'}).then((c) => $scope.contact = c);
   };
 
   // Find on parent scope and if not available, call the API
-  $scope.contact = $scope.contacts.find((contact) => contact.id == $stateParams.id);
+  $scope.contact = contactsService.list.find((contact) => contact.id == $stateParams.id);
   if (!$scope.contact) {
     $scope.loadContact($stateParams.id);
   }
 
   // Delete confirmation dialog
   $scope.showConfirmDelete = function(ev) {
-
     let confirm = $mdDialog.confirm()
       .title('Would you like to delete this contact?')
       .textContent('Will be removed permanently. This action can not be undone.')
@@ -31,4 +30,6 @@ export default function ContactsRoutesList($scope, $stateParams, $state, Contact
       .then(() => $scope.contact.remove())
       .then(() => $state.go('base.contacts', {}, {reload: true}));
   };
+
+  contactsService.toggleSearch(false);
 };

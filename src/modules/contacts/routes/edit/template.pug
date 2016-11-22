@@ -1,11 +1,16 @@
 div(layout='row', layout-align='center start')
     div(flex="", hide-xs)
     md-card(flex-xs="100", flex-sm="70", flex-md="60", flex-lg="40", flex-xl="30")
-        div.image-container(style="background-image: url({{ contact.image }})", ng-class="{'has-image': !!contact.image}")
-            input.hide(id="image-input", type='file', ng-model='contact.image', base-sixty-four-input='', parser='imageParser')
-            label.clicable(for="image-input")
-                md-icon edit
-                div.backdrop
+        div.hover
+            div.delete-image.no-pointer-events
+                md-button.no-pointer-events(md-colors="{background: 'primary' }")
+                    span change
+                md-button.md-button-icon.pointer-events(ng-if="image", ng-click="cleanImage()" , md-colors="{background: 'red' }")
+                    span remove
+            div.image-container(style="background-image: url({{ image }})", ng-class="{'has-image': !!image}")
+                input.hide(id="image-input", type='file', ng-model='image', base-sixty-four-input='', parser='imageParser')
+                label.clicable(for="image-input")
+                    div.backdrop
         md-card-content
             md-input-container
                 label Name
