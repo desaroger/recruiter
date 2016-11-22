@@ -40,11 +40,11 @@ module.exports = function makeWebpackConfig() {
     publicPath: 'http://localhost:8080/',
 
     // Filename for entry points
-    filename: 'bundle.[name].[hash].js',
+    filename: 'bundle.[name].js',
 
     // Filename for non-entry points
     // Only adds hash in build mode
-    chunkFilename: 'bundle.[name].[hash].js'
+    chunkFilename: 'bundle.[name].js'
   };
 
 
@@ -176,7 +176,6 @@ module.exports = function makeWebpackConfig() {
       ], {
         manifest: 'app-entry'
       }),
-      // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'bundle.vendor.[hash].js', Infinity),
 
       // Css in alternate file
       new ExtractTextPlugin('styles.[name].css')
