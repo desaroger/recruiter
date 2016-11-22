@@ -1,4 +1,7 @@
 /**
+ * Module for contacts functionality. Has the routes, models, services.
+ * This is the main module of this app, as for now there is no more functionality besides that.
+ *
  * Created by desaroger on 20/11/16.
  */
 
