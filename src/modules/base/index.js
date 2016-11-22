@@ -1,4 +1,6 @@
 /**
+ * Module for general purpose, core functionality.
+ *
  * Created by desaroger on 20/11/16.
  */
 
