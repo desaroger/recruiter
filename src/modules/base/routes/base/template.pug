@@ -1,18 +1,14 @@
-//md-sidenav.md-sidenav-right(md-component-id='sidebar', md-is-locked-open="", md-whiteframe='4')
-    md-toolbar.md-theme-indigo
-        h1.md-toolbar-tools More
-            span(flex='')
-            md-button.md-icon-button.right(aria-label='close', ng-click="ui.toggleSidebar()")
-                md-icon close
-    md-content(layout-margin='')
-        p
-            | This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
 div(layout="column", layout-align="center start", tabindex="-1", role="main", flex)
+    md-toolbar.md-warn(ng-if="contacts.error")
+        .md-toolbar-tools
+            h2.md-flex
+                md-icon error
+                span= ' '
+                span {{ contacts.error }}
     md-toolbar.md-hue-2(ng-if="!contacts.search")
         .md-toolbar-tools
             md-button.md-icon-button(ng-if="state.params.backButton", aria-label='Open Sidebar', ng-click="state.go('^')")
                 md-icon arrow_back
-
             h2 Contacts
             span(flex='')
             md-button.md-icon-button(ng-if="state.current.name == 'base.contacts'", ng-click="contacts.toggleSearch()", aria-label='search')

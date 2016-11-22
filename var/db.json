@@ -25,7 +25,8 @@
       ],
       "tags": [
         "informatico",
-        "teleco"
+        "teleco",
+        "bbbb"
       ]
     },
     {
@@ -35,7 +36,9 @@
       "phones": [
         "69559855"
       ],
-      "tags": [],
+      "tags": [
+        "ccc"
+      ],
       "name": "Google",
       "id": "5",
       "description": "asd"
@@ -43,7 +46,9 @@
     {
       "emails": [],
       "phones": [],
-      "tags": [],
+      "tags": [
+        "aaaa"
+      ],
       "name": "efwerfwe",
       "id": "B17a53bfg"
     }

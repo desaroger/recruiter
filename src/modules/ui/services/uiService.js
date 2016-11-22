@@ -10,12 +10,6 @@ export default function uiService($mdSidenav) {
     return $mdSidenav('sidebar').toggle();
   };
 
-  // Search
-  uiService.search = false;
-  uiService.toggleSearch = function toggleSearch() {
-    uiService.search = !uiService.search;
-  };
-
 
   return uiService;
 };
