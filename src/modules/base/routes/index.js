@@ -4,14 +4,16 @@
 
 import base from './base';
 
-export default ($stateProvider, $urlRouterProvider) => {
+export default function BaseRoutes($stateProvider, $urlRouterProvider) {
+  // Default location
   $urlRouterProvider.otherwise('/');
 
+  // Base state, parent of all the states
   $stateProvider
     .state('base', {
       url: '/',
+      redirectTo: 'base.contacts',
       template: base.template,
-      resolve: base.resolve,
       controller: base.controller
     });
 };

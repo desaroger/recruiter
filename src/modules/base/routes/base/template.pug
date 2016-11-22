@@ -1,10 +1,14 @@
 div(layout="column", layout-align="center start", tabindex="-1", role="main", flex)
+
+    // Toolbar for a contacts loading error
     md-toolbar.md-warn(ng-if="contacts.error")
         .md-toolbar-tools
             h2.md-flex
                 md-icon error
                 span= ' '
                 span {{ contacts.error }}
+
+    // Main toolbar
     md-toolbar.md-hue-2(ng-if="!contacts.search")
         .md-toolbar-tools
             md-button.md-icon-button(ng-if="state.params.backButton", aria-label='Open Sidebar', ng-click="state.go('^')")
@@ -13,6 +17,8 @@ div(layout="column", layout-align="center start", tabindex="-1", role="main", fl
             span(flex='')
             md-button.md-icon-button(ng-if="state.current.name == 'base.contacts'", ng-click="contacts.toggleSearch()", aria-label='search')
                 md-icon search
+
+    // Toolbar for searching
     md-toolbar(id="search-toolbar", ng-if="contacts.search", md-theme="grey")
         .md-toolbar-tools
             md-button.md-icon-button(ng-click='contacts.toggleSearch()', aria-label='Back')
@@ -23,6 +29,6 @@ div(layout="column", layout-align="center start", tabindex="-1", role="main", fl
             md-button.md-icon-button(aria-label='Search', ng-click="contacts.update()", ng-disabled="!contacts.searchTerm")
                 md-icon search
 
-
+    // Main content
     md-content(id="main-content", flex='', layout-padding='', style="width:100%")
         ui-view

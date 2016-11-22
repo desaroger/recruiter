@@ -4,7 +4,6 @@
 
 import template from './template.pug';
 import controller from './controller';
-import resolve from './resolve';
 import './styles.scss';
 
-export default {template, resolve, controller};
+export default {template, controller};
