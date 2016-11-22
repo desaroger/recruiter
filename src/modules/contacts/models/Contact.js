@@ -11,7 +11,14 @@ export default function ContactsModelsContact($q, Restangular, ImageModel) {
 
   Contact.updateWithImage = function updateImage(contact, img) {
     let thumbnail = '';
-    return imageThumbnail(img, 100, 100)
+    delete contact.image;
+    delete contact.thumbnail;
+    delete contact.images;
+    return contact.save()
+      .then((s) => {
+        contact = s;
+        return imageThumbnail(img, 100, 100);
+      })
       .then((_thumbnail) => thumbnail = _thumbnail)
       .then(() => {
         return ImageModel.getList({contactId: '' + contact.id});
@@ -26,11 +33,8 @@ export default function ContactsModelsContact($q, Restangular, ImageModel) {
         return image.save();
       })
       .then(() => {
-        delete contact.image;
-        delete contact.thumbnail;
-        delete contact.images;
-        return contact.save();
-      });
+          return contact;
+      })
   };
 
   return Contact;

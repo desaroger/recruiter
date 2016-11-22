@@ -6,13 +6,13 @@ import _ from 'lodash';
 export default function ContactsRoutesList($scope, $state, $q, Contact, contactsService) {
   $scope.save = function save(contact) {
     return Contact.updateWithImage(contact, $scope.image)
-      .then(() => {
+      .then((contact) => {
         return $scope.loadContact(contact.id);
       })
-      .then(() => {
+      .then((contact) => {
         contactsService.update();
-        
-        $state.go('.^');
+
+        $state.go('.^', {id: contact.id});
       });
   };
 

@@ -3,6 +3,11 @@
  */
 
 export default function ContactsRoutesList($scope, $stateParams, $state, Contact, $mdDialog, contactsService) {
+
+  if ($state.$current.name == 'base.contacts.detail' && $stateParams.id == 'new') {
+    $state.go('.^');
+  }
+
   $scope.loadContact = function loadContact(id) {
     if (id == 'new') {
       return $scope.contact = Contact.build({emails: [], phones: []});
@@ -28,7 +33,8 @@ export default function ContactsRoutesList($scope, $stateParams, $state, Contact
 
     return $mdDialog.show(confirm)
       .then(() => $scope.contact.remove())
-      .then(() => $state.go('base.contacts', {}, {reload: true}));
+      .then(() => contactsService.update())
+      .then(() => $state.go('base.contacts'));
   };
 
   contactsService.toggleSearch(false);

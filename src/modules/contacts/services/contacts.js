@@ -12,7 +12,7 @@ export default function ContactsServicesContacts(Contact) {
       if (this.search && this.searchTerm) {
         params.q = this.searchTerm;
       }
-      Contact.getList(params)
+      return Contact.getList(params)
         .then((list) => {
           this.list = list;
         });
