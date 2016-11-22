@@ -13,6 +13,7 @@ ui-view
                         div(flex='50', ng-repeat='filter in contacts.getAvailableFilters()')
                             md-checkbox(ng-model="contacts.filters[filter]", ng-change="contacts.update()")
                                 | {{ filter }}
+                    p.empty-message(ng-if="!contacts.getAvailableFilters().length") Here will appear the available tags to filter
             div(flex)
 
         // 70% screen for the contacts list card. 100% on XS.
@@ -28,6 +29,7 @@ ui-view
                                 h4 {{ contact.email}}
                                 p {{ contact.description }}
                             md-divider(md-inset='', ng-if='!$last')
+                        p.empty-message(ng-if="!contacts.list.length") Add your first contact clicking on the big floating button.
             div(flex)
 
     // FAB button
