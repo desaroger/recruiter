@@ -10,7 +10,7 @@ export default function ContactsRoutesList($scope, $stateParams, $state, Contact
 
   $scope.loadContact = function loadContact(id) {
     if (id == 'new') {
-      return $scope.contact = Contact.build({emails: [], phones: []});
+      return $scope.contact = Contact.build({emails: [], phones: [], tags: []});
     }
     return Contact.one(id).get({_embed: 'images'}).then((c) => $scope.contact = c);
   };

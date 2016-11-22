@@ -29,6 +29,12 @@ export default function ContactsRoutesList($scope, $state, $q, Contact, contacts
 
   $scope.cleanImage = () => $scope.image = '';
 
+  $scope.querySearch = function querySearch(query) {
+    let tags = contactsService.getAvailableFilters();
+    let results = query ? tags.filter((tag) => tag.startsWith(query)) : [];
+    return results;
+  };
+
 
   // Image parsing
 

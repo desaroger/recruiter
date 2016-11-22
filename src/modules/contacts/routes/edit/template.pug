@@ -24,6 +24,12 @@ div(layout='row', layout-align='center start')
             md-input-container
                 label Phones
                 md-chips(ng-model='contact.phones', md-removable='true')
+            md-input-container
+                label Tags
+                md-chips(ng-model='contact.tags', md-removable='true', md-autocomplete-snap, md-require-match='false')
+                    md-autocomplete(md-selected-item='selectedItem', md-search-text='searchText', md-items='item in querySearch(searchText)', md-item-text='item', placeholder='')
+                        span(md-highlight-text='null') {{item}}
+
 
 
 
