@@ -8,14 +8,21 @@ ui-view
                     span.md-headline {{ contact.name }}
             md-card-content
                 md-list(flex)
+
+                    // Description
                     md-list-item
                         p {{ contact.description }}
+
+                    // Emails
+                    md-divider
                     md-subheader.md-no-sticky Emails
                     md-list-item.secondary-button-padding(ng-repeat='email in contact.emails', ng-ref="google.com")
                         p {{ email }}
                         md-button.md-secondary(aria-label='email')
                             a(ng-href='mailto:{{ email }}')
                                 md-icon email
+
+                    // Phones
                     md-divider
                     md-subheader.md-no-sticky Phones
                     md-list-item.secondary-button-padding(ng-repeat='phone in contact.phones')
@@ -23,13 +30,15 @@ ui-view
                         md-button.md-secondary(aria-label='call')
                             a(ng-href='tel:{{ phone }}')
                                 md-icon call
+
+                    // Tags
                     md-divider
                     md-subheader.md-no-sticky Tags
                     md-chips(ng-model='contact.tags', readonly='true')
                         md-chip-template  {{ $chip }}
 
-
+            // Action buttons
             md-card-actions(layout='row', layout-align='end center')
                 md-button(ng-click="showConfirmDelete()") Delete
-                md-button(ui-sref=".edit") Edit
+                md-button.md-accent(ui-sref=".edit") Edit
         div(flex="", hide-xs)

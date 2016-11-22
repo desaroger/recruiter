@@ -1,8 +1,10 @@
 div(layout='row', layout-align='center start')
     div(flex="", hide-xs)
     md-card(flex-xs="100", flex-sm="70", flex-md="60", flex-lg="40", flex-xl="30")
+
+        // Image
         div.hover
-            div.delete-image.no-pointer-events
+            div.buttons-container.no-pointer-events
                 md-button.no-pointer-events(md-colors="{background: 'primary' }")
                     span change
                 md-button.md-button-icon.pointer-events(ng-if="image", ng-click="cleanImage()" , md-colors="{background: 'red' }")
@@ -11,6 +13,8 @@ div(layout='row', layout-align='center start')
                 input.hide(id="image-input", type='file', ng-model='image', base-sixty-four-input='', parser='imageParser')
                 label.clicable(for="image-input")
                     div.backdrop
+
+        // Fields
         md-card-content
             md-input-container
                 label Name
@@ -30,10 +34,8 @@ div(layout='row', layout-align='center start')
                     md-autocomplete(md-selected-item='selectedItem', md-search-text='searchText', md-items='item in querySearch(searchText)', md-item-text='item', placeholder='')
                         span(md-highlight-text='null') {{item}}
 
-
-
-
+        // Action buttons
         md-card-actions(layout='row', layout-align='end center')
             md-button(ng-click="cancel(contact)") Cancel
-            md-button(ng-click="save(contact)") Done
+            md-button.md-accent(ng-click="save(contact)") Done
     div(flex="", hide-xs)

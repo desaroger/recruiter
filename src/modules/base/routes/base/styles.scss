@@ -1,15 +1,15 @@
 
-
-
+// Toolbar when the search is active
 #search-toolbar {
   background-color: white;
 
-
+  // Aligns the input
   md-input-container {
     label {position: relative}
   }
 }
 
+// Main gray color of background
 #main-content {
   background-color: #eee;
 }

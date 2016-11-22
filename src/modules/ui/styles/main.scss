@@ -1,8 +1,15 @@
+/**
+ * General purpose styles goes here.
+ *
+ * Created by desaroger on 22/11/16.
+ */
 
+// Helper for cursor pointer
 .clicable {
   cursor: pointer;
 }
 
+// Helpers for disable/enable pointer-events
 .pointer-events{
   pointer-events: all;
 }

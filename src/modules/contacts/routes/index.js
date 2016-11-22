@@ -8,18 +8,18 @@ import edit from './edit';
 
 export default ($stateProvider) => {
   $stateProvider
-    .state('base.contacts', {
+    .state('base.contacts', {                 // List
       url: 'contacts',
       template: list.template,
       controller: list.controller
     })
-    .state('base.contacts.detail', {
+    .state('base.contacts.detail', {          // Detail
       url: '/:id',
       params: {backButton: true},
       template: detail.template,
       controller: detail.controller
     })
-    .state('base.contacts.detail.edit', {
+    .state('base.contacts.detail.edit', {     // Edit
       url: '/edit',
       params: {backButton: true},
       template: edit.template,
