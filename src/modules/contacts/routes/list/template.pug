@@ -1,17 +1,25 @@
 ui-view
-    //md-tabs(md-dynamic-height='', md-border-bottom='', hide-xs)
-        md-tab(label='one')
-        md-tab(label='two')
-        md-tab(label='three')
     div(layout='row', layout-align='center start')
-        div(flex="", hide-xs)
-        div(flex="")
-            md-list(layout='column', layout-align='start start')
-                md-list-item.md-2-line(ng-repeat="contact in contacts", ui-sref="base.contacts.detail(contact)")
-                    img.md-avatar(ng-src='{{ contact.thumbnail || contact.image || "https://dummyimage.com/100x100/ffffff/000000.png&text=+" }}', alt='lorem')
-                    .md-list-item-text
-                        h3 {{ contact.name }}
-                        p {{ contact.emails[0] }}
-        div(flex="", hide-xs)
+        div(flex="30", hide-xs)
+            md-card
+                md-toolbar
+                    .md-toolbar-tools
+                        h2 Filter by tag
+                md-card-content
+                    div(layout='column', layout-wrap='', flex='')
+                        div(flex='50', ng-repeat='filter in contacts.getAvailableFilters()')
+                            md-checkbox(ng-model="contacts.filters[filter]", ng-change="contacts.update()")
+                                | {{ filter }}
+        div(flex="70", flex-xs="100")
+            md-card
+                md-card-content
+                    md-list
+                        md-list-item.md-3-line(ng-repeat='contact in contacts.list', ui-sref="base.contacts.detail(contact)")
+                            img.md-avatar(ng-src='{{ contact.images[0].thumbnail }}', alt='{{item.who}}')
+                            .md-list-item-text
+                                h3 {{ contact.name }}
+                                h4 {{ contact.email}}
+                                p {{ contact.description }}
+                            md-divider(md-inset='', ng-if='!$last')
     md-button.md-fab.md-fab-bottom-right.md-primary(ui-sref="base.contacts.detail.edit({id: 'new'})", aria-label='Add new contact')
         md-icon person_add

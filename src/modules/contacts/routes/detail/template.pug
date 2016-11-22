@@ -2,7 +2,7 @@ ui-view
     div(layout='row', layout-align='center start')
         div(flex="", hide-xs)
         md-card(flex-xs="100", flex-sm="70", flex-md="60", flex-lg="40", flex-xl="30")
-            div.image-container(style="height: 200px; background-image: url({{ contact.image }}); background-size: cover; background-position: center")
+            div.image-container(style="height: 200px; background-image: url({{ contact.images[0].image }}); background-size: cover; background-position: center")
             md-card-title
                 md-card-title-text
                     span.md-headline {{ contact.name }}
@@ -23,6 +23,10 @@ ui-view
                         md-button.md-secondary(aria-label='call')
                             a(ng-href='tel:{{ phone }}')
                                 md-icon call
+                    md-divider
+                    md-subheader.md-no-sticky Tags
+                    md-chips(ng-model='contact.tags', readonly='true')
+                        md-chip-template  {{ $chip }}
 
 
             md-card-actions(layout='row', layout-align='end center')

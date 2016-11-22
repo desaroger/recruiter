@@ -5,6 +5,7 @@
 export default function uiService($mdSidenav) {
   let uiService = {};
 
+  // Sidebar
   uiService.toggleSidebar = function toggleSidebar() {
     return $mdSidenav('sidebar').toggle();
   };

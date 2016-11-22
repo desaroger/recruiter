@@ -1,4 +1,22 @@
 
+
+.hover {
+  position: relative;
+
+  &:not(:hover) {
+
+    &.has-image label {
+      display: none;
+    }
+
+    .delete-image {
+      display: none;
+    }
+
+  }
+}
+
+
 .image-container {
 
   height: 200px;
@@ -6,10 +24,6 @@
   background-position: center;
 
   position: relative;
-
-  &.has-image:not(:hover) label {
-    display: none;
-  }
 
   .backdrop {
     position: absolute;
@@ -25,4 +39,19 @@
     color: black;
   }
 
+}
+
+.delete-image {
+  position:absolute;
+
+  // center
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+
+  .md-button {
+
+  }
 }
