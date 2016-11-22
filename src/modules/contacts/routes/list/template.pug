@@ -1,7 +1,8 @@
 ui-view
     div(layout='row', layout-align='center start')
-        div(flex="30", hide-xs)
-            md-card
+        div(flex="30", layout="row", layout-align="center start", hide-xs)
+            div(flex="0", flex-sm="0", flex-md="25", flex-lg="45", flex-xl="45")
+            md-card(flex="100", flex-sm="100", flex-md="70", flex-lg="50", flex-xl="50")
                 md-toolbar
                     .md-toolbar-tools
                         h2 Filter by tag
@@ -10,8 +11,10 @@ ui-view
                         div(flex='50', ng-repeat='filter in contacts.getAvailableFilters()')
                             md-checkbox(ng-model="contacts.filters[filter]", ng-change="contacts.update()")
                                 | {{ filter }}
-        div(flex="70", flex-xs="100")
-            md-card
+            div(flex)
+        div(flex="70", flex-xs="100", layout="row", layout-align="center start")
+            div(flex="0", flex-sm="0", flex-md="5", flex-lg="5", flex-xl="5")
+            md-card(flex="100", flex-sm="100", flex-md="60", flex-lg="60", flex-xl="50")
                 md-card-content
                     md-list
                         md-list-item.md-3-line(ng-repeat='contact in contacts.list', ui-sref="base.contacts.detail(contact)")
@@ -21,5 +24,6 @@ ui-view
                                 h4 {{ contact.email}}
                                 p {{ contact.description }}
                             md-divider(md-inset='', ng-if='!$last')
+            div(flex)
     md-button.md-fab.md-fab-bottom-right.md-primary(ui-sref="base.contacts.detail.edit({id: 'new'})", aria-label='Add new contact')
         md-icon person_add
