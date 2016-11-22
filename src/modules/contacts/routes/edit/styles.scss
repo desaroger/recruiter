@@ -1,5 +1,5 @@
 
-
+// The hover for image and buttons
 .hover {
   position: relative;
 
@@ -9,14 +9,13 @@
       display: none;
     }
 
-    .delete-image {
+    .buttons-container {
       display: none;
     }
-
   }
 }
 
-
+// The image container with edit button and backdrop
 .image-container {
 
   height: 200px;
@@ -38,10 +37,10 @@
     margin-left: -12px; margin-top: -12px;
     color: black;
   }
-
 }
 
-.delete-image {
+// Button for deleting the image
+.buttons-container {
   position:absolute;
 
   // center
@@ -50,8 +49,4 @@
   transform: translate(-50%, -50%);
 
   z-index: 1;
-
-  .md-button {
-
-  }
 }
