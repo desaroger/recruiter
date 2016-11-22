@@ -1,6 +1,6 @@
 {
   "name": "recruiter",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Contact manager for recruiters, made with Angular",
   "main": "index.js",
   "scripts": {
