@@ -23,6 +23,10 @@ ui-view
                         md-button.md-secondary(aria-label='call')
                             a(ng-href='tel:{{ phone }}')
                                 md-icon call
+                    md-divider
+                    md-subheader.md-no-sticky Tags
+                    md-list-item(ng-repeat='tag in contact.tags')
+                        p {{ tag }}
 
 
             md-card-actions(layout='row', layout-align='end center')
