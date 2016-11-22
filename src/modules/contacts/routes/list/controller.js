@@ -3,6 +3,8 @@
  */
 
 export default function ContactsRoutesList(contactsService) {
+  'ngInject';
+
   /** TODO: find a better solution
    * On base/routes/base/controller we have a watcher of the $stateChangeStart, but this events
    * doesn't trigger when the page loads directly the state. So we need this line. Maybe there

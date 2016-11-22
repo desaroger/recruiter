@@ -5,6 +5,8 @@
  */
 
 export default function CoreConfigScript(RestangularProvider, $mdThemingProvider) {
+  'ngInject';
+
   // The url of the server
   RestangularProvider.setBaseUrl('http://localhost:3000/');
   // The grey theme (used on the search toolbar)

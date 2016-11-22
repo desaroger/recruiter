@@ -3,6 +3,8 @@
  */
 
 export default function ContactsRoutesDetail($scope, $stateParams, $state, Contact, $mdDialog, contactsService) {
+  'ngInject';
+
   /** TODO: find a better solution
    * Same issue as described on contacts/routes/list/controller.
    */

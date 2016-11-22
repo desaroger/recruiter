@@ -5,5 +5,7 @@
  */
 
 export default function uiService() {
+  'ngInject';
+
   return {};
 };

@@ -5,6 +5,8 @@
  */
 
 export default function ContactsModelsImage(Restangular) {
+  'ngInject';
+
   // Clean Restangular service
   let Image = Restangular.service('images');
 
