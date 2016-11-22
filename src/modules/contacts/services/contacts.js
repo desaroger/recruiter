@@ -5,6 +5,8 @@
  */
 
 export default function ContactsServicesContacts($interval, Contact) {
+  'ngInject';
+
   let contactService = {
 
     // Sets if the search is enabled (if enabled, the searchTerm will be sent to the server

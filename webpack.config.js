@@ -4,6 +4,10 @@
 let webpack				= require('webpack');
 let HtmlWebpackPlugin	= require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let SplitByPathPlugin = require('webpack-split-by-path');
+let ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+let CleanWebpackPlugin = require('clean-webpack-plugin');
+let path = require('path');
 
 // Identify the environment
 let ENV = process.env.npm_lifecycle_event;
@@ -20,9 +24,6 @@ module.exports = function makeWebpackConfig() {
 
   config.entry = {};
 
-  if(isProd) {
-    config.entry.vendor = ['angular'];
-  }
   if(!isTest) {
     config.entry.app = './src/index.js';
   }
@@ -137,11 +138,18 @@ module.exports = function makeWebpackConfig() {
         _: 'lodash'
       })
 
-    )
+    );
   }
 
   if(isProd) {
     config.plugins.push(
+
+      // Clean the build folder
+      new CleanWebpackPlugin(['build'], {
+        root: path.resolve(__dirname),
+        verbose: false,
+        dry: false
+      }),
 
       // Only emit files when there are no errors
       new webpack.NoErrorsPlugin(),
@@ -149,8 +157,26 @@ module.exports = function makeWebpackConfig() {
       // Dedupe modules in the output
       new webpack.optimize.DedupePlugin(),
 
+      // Annotate
+      new ngAnnotatePlugin(),
+
+      // Uglify
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
+
       // Chunks
-      new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'bundle.vendor.[hash].js', Infinity),
+      new SplitByPathPlugin([
+        {
+          name: 'vendor',
+          path: path.join(__dirname, 'node_modules')
+        }
+      ], {
+        manifest: 'app-entry'
+      }),
+      // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'bundle.vendor.[hash].js', Infinity),
 
       // Css in alternate file
       new ExtractTextPlugin('styles.[name].css')
