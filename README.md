@@ -24,6 +24,10 @@ I will try to add some basic tests. I am not happy unless everything is tested, 
 
 # Whys
 
+### Git Flow
+
+I always follow a standard for almost everything. I have used git-flow here to keep the repository arranged.
+
 ### Webpack
 
 This is a little project and webpack actually isn't needed, but you never known how big a project can grow. I never scaled a project too big, always scaled to a good approach or too small, so when a project has angular, ES6, tests, pug (...) I know webpack will save a lot of time.
@@ -85,7 +89,7 @@ You can edit all the fields. The email, phone and tags are *chips*, so are very 
 
 ![edit](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/edit.png)
 
-The image can be updated, allowing pick one of your pc.
+The image can be updated, allowing pick one from your pc.
 
 ![update image](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/update-image.png)
 
@@ -107,15 +111,29 @@ We use css flex simplify the responsiveness.
 
 ![responsive small](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/responsive-small.png)
 
-# Conclusions
+### Quality code
 
-I loved working on this project. This allowed me use to use Angular Material that had never used it.
+![jsdoc](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/jsdoc.png)
+
+All the code:
+- Is documented with JSDoc standard.
+- Pass Eslint following the Google Javascript style guide.
+
+# Conclusions
 
 I run out of time as I lost it with little issues with layouts on flexbox (first time using it) and webpack config (mainly). So to not delay more the end of the project I decided to stop here and not continuing adding things.
 
-I have left out the tests. I'm not happy, but I am out of time and testing angular is (at least for me) a slow process. This isn't an excuse, this needs tests and if this had an update the most needed feature would be the tests.
+I loved working on this project. This allowed me use to use Angular Material that had never used it. I think, besides the things that I could not do, this it's a good project, prepared for grow as is structured as a big application. Thanks to Angular was easy and fast to make an app with a great performance and with few lines of code. And thanks to Webpack I was able to use babel, pug, sass, etc easily.
 
-I meant to add a layout change button too, to toggle between list and a tiles view. But the flexbox takes time and this isn't a critical need.
+# Things that I left
+
+**tests**: I'm not happy, but I am out of time and testing angular is (at least for me) a slow process. This isn't an excuse, this needs tests and if this had an update the most needed feature would be the tests.
+
+**multilayout**: I wanted to add a layout change button too, to toggle between list and a tiles view. But the flexbox takes time and this isn't a critical need.
+
+**badges**: I wanted to add travis and codeclimate to show the badges on this readme. Also I prepared the test coverage for this project, but it has no tests. I have 100% covarege forever, yippee.
+
+
 
 # Times
 
@@ -124,7 +142,7 @@ I meant to add a layout change button too, to toggle between list and a tiles vi
 | Basic documentation                     | 0:30     | 1:00    | I wrote more text than expected, and slower.                        |
 | Install everything, webpack, babel, etc | 0:30     | 0:45    | Wep, webpack.                                                       |
 | MVP                                     | 4:00     | 5:00    |                                                                     |
-| Documentation (including extras)        | 2:00     | 1:00    |                                                                     |
+| Documentation (including extras)        | 2:00     | 2:00    |                                                                     |
 | (extra) search                          | 2:00     | 3:00    |                                                                     |
 | (extra) groups                          | 2:30     | 2:00    |                                                                     |
 | (extra) html5 buttons                   | 1:00     | 0:10    |                                                                     |
