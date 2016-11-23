@@ -8,7 +8,7 @@ Recruiter is a web app for recruiters who want manage his contacts network. This
 # Run it
 
 Following these steps you will run the dummy server on port 3000 and the web app on port 8080.
-This guide takes for granted you have node and npm, as needed for run the dummy server.
+This guide takes for granted you have node and npm, as it's needed for run the dummy server.
 
 Clone the repository:
 ```bash
