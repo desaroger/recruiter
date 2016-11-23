@@ -1,5 +1,5 @@
 
-![cover](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/list.png)
+![recorded](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/recorded.gif)
 
 # Introduction
 
