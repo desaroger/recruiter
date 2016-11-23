@@ -1,4 +1,6 @@
 
+![cover](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/list.png)
+
 # Introduction
 
 Recruiter is a web app for recruiters who want manage his contacts network. This project only has learning purposes and to check my skills.
@@ -56,16 +58,75 @@ So... why I used material? For two reasons mainly: This is a web app, it can be 
 
 There is a lot of options in order to make a dummy CRUD server. My first thought was make a Loopback API REST. With the loopback's console you can make a full featured API REST in minutes. But too much for a dummy server. Later I thought to use the $httpBackend service of angular, which allow mock http calls and is used mainly for tests purposes, but I thought it will be awesome to have a dummy server without anything, no console, no running a server, only the browser. But I was unable to find out a library which uses the httpBackend to make a CRUD, and I don't want to lose time building it. Json-server allows, with only a json, make an REST API. And also I wanted to be able to do a full-text search, and json-server allows this and a lot more things, so it's perfect.
 
+# Result
+
+### List with filtering by tag
+
+This is the first you see when enter on recruiter. The list of contacts, the big button to add a new contact, and the filters. The tags on the contacts data can used for filtering and found a contact by employed/unemployed, frontend/backend, etc.
+
+![list](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/list.png)
+
+### Searching
+
+You can make a quick search based on all the fields of the contacts.
+
+![search](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/search.png)
+
+### Detail of a contact
+
+On the detail you can see all the available info, including a short description, a image, emails, phones and tags.
+The envelope icon allows you send an email to this address, and the phone icon allows call if you are on a phone.
+
+![detail](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/detail.png)
+
+### Edit a contact
+
+You can edit all the fields. The email, phone and tags are *chips*, so are very easy to manage.
+
+![edit](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/edit.png)
+
+The image can be updated, allowing pick one of your pc.
+
+![update image](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/update-image.png)
+
+The tags is a *chips* field with autocomplete, so when you start writing appears the related existing tags
+
+![autocomplete](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/autocomplete.png)
+
+### Deleting a contact
+
+When you click on the delete button, a confirmation dialog will show to ensure you want to delete the contact.
+
+![delete dialog](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/delete-dialog.png)
+
+### Responsive
+
+We use css flex simplify the responsiveness.
+
+![responsive big](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/responsive-big.png)
+
+![responsive small](https://raw.githubusercontent.com/desaroger/recruiter/master/var/screenshots/responsive-small.png)
+
+# Conclusions
+
+I loved working on this project. This allowed me use to use Angular Material that had never used it.
+
+I run out of time as I lost it with little issues with layouts on flexbox (first time using it) and webpack config (mainly). So to not delay more the end of the project I decided to stop here and not continuing adding things.
+
+I have left out the tests. I'm not happy, but I am out of time and testing angular is (at least for me) a slow process. This isn't an excuse, this needs tests and if this had an update the most needed feature would be the tests.
+
+I meant to add a layout change button too, to toggle between list and a tiles view. But the flexbox takes time and this isn't a critical need.
 
 # Times
 
-| Task                                    | Expected | Reality | Observations |
-|-----------------------------------------|----------|---------|--------------|
-| Basic documentation                     | 0:30     |         |              |
-| Install everything, webpack, babel, etc | 0:30     |         |              |
-| MVP                                     | 4:00     |         |              |
-| Documentation (including extras)        | 2:00     |         |              |
-| (extra) search                          | 2:00     |         |              |
-| (extra) groups                          | 2:30     |         |              |
-| (extra) html5 buttons                   | 1:00     |         |              |
-| (extra) multilayouts                    | 2:30     |         |              |
+| Task                                    | Expected | Reality | Observations                                                        |
+|-----------------------------------------|----------|---------|---------------------------------------------------------------------|
+| Basic documentation                     | 0:30     | 1:00    | I wrote more text than expected, and slower.                        |
+| Install everything, webpack, babel, etc | 0:30     | 0:45    | Wep, webpack.                                                       |
+| MVP                                     | 4:00     | 5:00    |                                                                     |
+| Documentation (including extras)        | 2:00     | 1:00    |                                                                     |
+| (extra) search                          | 2:00     | 3:00    |                                                                     |
+| (extra) groups                          | 2:30     | 2:00    |                                                                     |
+| (extra) html5 buttons                   | 1:00     | 0:10    |                                                                     |
+| (extra) multilayouts                    | 2:30     | 0:00    | Canceled.                                                           |
+| Unexpected things added on the fly      | 0:00     | 4:00    | I added a lot of little things that initially I didn't think to do. |
