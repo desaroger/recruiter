@@ -5,7 +5,36 @@
 
 Recruiter is a web app for recruiters who want manage his contacts network. This project only has learning purposes and to check my skills.
 
-#Requirements
+# Run it
+
+Following these steps you will run the dummy server on port 3000 and the web app on port 8080.
+This guide takes for granted you have node and npm, as needed for run the dummy server.
+
+Clone the repository:
+```bash
+$ git clone git@github.com:desaroger/recruiter.git
+$ cd recruiter
+```
+
+Install the dependencies (only 3 dependencies):
+```bash
+$ npm i --production
+```
+
+Run the dummy server:
+```bash
+$ npm run api
+```
+
+On another terminal, run the web app:
+```bash
+$ npm run serve
+```
+ This will serve the folder `/build` with [http-server](https://github.com/indexzero/http-server).
+
+For more commands look at the scripts on `package.json` file.
+
+# Project Requirements
 
 You need to build an Angular app with:
 
@@ -23,6 +52,8 @@ I'm going to use Angular 1.6. I will use Webpack to compile everything, jasmine,
 I will try to add some basic tests. I am not happy unless everything is tested, but on this frontend application, as testing directives in Angular is such a nightmare, I will be happy if I can test some basic functionality.
 
 # Whys
+
+Why I decided to use each technology.
 
 ### Git Flow
 
